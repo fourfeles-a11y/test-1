@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> TEST #2 </title>
+</head>
+
+<body>
+    <p>Storage Of Info.</p>
+
+    <h1>Home Page</h1>
+    <p>The website!</p>
+
+    <button onclick="window.location.href='page2.html'">
+        Go to Page 2
+    </button> 
+	
+	<button onclick="window.location.href='info_file'">
+        Go to Page INF0
+    </button> 
+
+</body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Page</title>
+</head>
+
+<body>
+
+    <h1>Enter Password</h1>
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="checkPassword()">Enter</button>
+
+    <p id="message"></p>
+
+   <script>
+
+function checkPassword() {
+
+    let password = document.getElementById("password").value;
+
+    if (password === "info") {
+        window.location.href = "secret.html";
+    }
+
+    else if (password === "admin456") {
+        window.location.href = "chess site";
+    }
+	else if (password === "INF0") {
+        window.location.href = "STAGE 1.html";
+    }
+	else if (password === "ADMIN!@#") {
+        window.location.href = "ADMIN PASS.html";
+    }
+
+    else {
+        document.getElementById("message").innerHTML = "NOT AUTHORISED CODE!";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

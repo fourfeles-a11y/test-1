@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> STAGE 2 </title>
+	<p style="color: white;">you are smart</p>
+	<p style="color: white;">As you have found out this new skill you will be needing to use it a little</p>
+	<p style="color: white;">Remember to use this in further LVL</p>
+</head>
+</html>
+<html>
+<head>
+    <title>Password Page</title>
+</head>
+
+<body>
+.
+    
+	.
+	.
+	.
+	.
+	.
+	<h1 style="color: white;">Enter Password</h1>
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="checkPassword()">Enter</button>
+
+    <p id="message"></p>
+
+   <script>
+
+function checkPassword() {
+
+    let password = document.getElementById("password").value;
+
+    if (password === "LVL") {
+        window.location.href = "STAGE 3.html";
+    }
+  else {
+        document.getElementById("message").innerHTML = "NOT AUTHORISED CODE!";
+    }
+
+}
+
+</script>
+
+ <button onclick="window.location.href='index.html'">
+        Go Home
+    </button>
+
+</body>
+</html>

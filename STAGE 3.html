@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Stage4 </title>
+	
+	
+	<p style="color: white;"> SOLVE:10011010010   </P>
+	
+	<P> SOLVE:11043110   </P>
+	
+	
+	
+	
+	
+	<input type="text" id="answer" placeholder="Enter answer"> 
+
+    <button onclick="checkAnswer()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+
+        function checkAnswer() {
+
+            let answer =
+                document.getElementById("answer").value.toLowerCase();
+
+            if (answer === "1234") {
+
+                window.location.href = "STAGE 4.html";
+
+            } else {
+
+                document.getElementById("message").innerHTML =
+                    "Wrong answer. Try again!";
+
+            }
+
+        }
+
+    </script>
+	
+	
+	 <button onclick="window.location.href='INDEX.HTML/index.html'">
+        Go Home
+    </button>
+	
+	
+</head>
+</html>

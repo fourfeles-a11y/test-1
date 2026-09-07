@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+</head>
+
+<body>
+
+    <h1>This is Page INF0!</h1>
+    <p>You successfully changed pages.</p>
+	
+	<p>STUDENT USER:1041------</p>
+	<p>PASS:St@----------</p>
+	<p>pass 1: info</p>
+	<p>PASS 2:admin456</p>
+	
+	Extra Obtained Info #050-----.</p>
+
+    <button onclick="window.location.href='index.html'">
+        Go Home
+    </button>
+
+</body>
+</html>

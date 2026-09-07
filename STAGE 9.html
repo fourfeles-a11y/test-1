@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Level 4 - Memory</title>
+
+<style>
+
+body {
+    background:#050505;
+    color:#00ff88;
+    font-family:monospace;
+    text-align:center;
+    padding:40px;
+}
+
+#sequence {
+    font-size:50px;
+    letter-spacing:20px;
+    margin:50px;
+}
+
+input {
+    background:black;
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:12px;
+    font-family:monospace;
+    width:300px;
+}
+
+button {
+    padding:12px 25px;
+    cursor:pointer;
+}
+
+#next {
+    display:none;
+    background:#00ff88;
+    border:0;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>MEMORY TRAP</h1>
+
+<p>Memorize the sequence.</p>
+
+<div id="sequence"></div>
+
+<p id="instruction"></p>
+
+<input id="answer" placeholder="Example: 2,5,8">
+
+<button onclick="check()">SUBMIT</button>
+
+<p id="message"></p>
+
+<button id="next" onclick="location.href='STAGE 10.html'">
+NEXT LEVEL →
+</button>
+
+<script>
+
+const original =
+    ["A","A","B","A","C","C","A","B","A","C"];
+
+document.getElementById("sequence").innerHTML =
+    original.join(" ");
+
+setTimeout(()=>{
+
+    document.getElementById("sequence").innerHTML =
+        "█ █ █ █ █ █ █ █ █ █";
+
+    document.getElementById("instruction").innerHTML =
+        "Enter the positions that were NOT A.";
+
+},4000);
+
+function check() {
+
+    let answer =
+        document.getElementById("answer").value
+        .replace(/\s/g,"");
+
+    /*
+       Positions that aren't A:
+       3,5,6,8,10
+    */
+
+    if(answer === "3,5,6,8,10") {
+
+        document.getElementById("message").innerHTML =
+            "✓ MEMORY TEST PASSED";
+
+        document.getElementById("next").style.display =
+            "inline-block";
+
+    } else {
+
+        document.getElementById("message").innerHTML =
+            "✗ MEMORY FAILURE";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

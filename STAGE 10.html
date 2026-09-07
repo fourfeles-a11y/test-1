@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Final Level - Escape Room</title>
+
+<style>
+
+body {
+    background:#030303;
+    color:#00ff88;
+    font-family:monospace;
+    text-align:center;
+    padding:25px;
+}
+
+.room {
+    width:800px;
+    max-width:95%;
+    height:500px;
+    margin:30px auto;
+    border:2px solid #00ff88;
+    position:relative;
+    background:#070707;
+}
+
+.object {
+    position:absolute;
+    padding:20px;
+    border:1px solid #245c43;
+    cursor:pointer;
+    background:#080808;
+}
+
+.object:hover {
+    background:#123d29;
+}
+
+#clock {
+    top:30px;
+    left:40px;
+}
+
+#safe {
+    top:150px;
+    right:50px;
+}
+
+#computer {
+    bottom:40px;
+    left:300px;
+}
+
+#painting {
+    top:280px;
+    left:50px;
+}
+
+#drawer {
+    bottom:50px;
+    right:50px;
+}
+
+#message {
+    min-height:30px;
+}
+
+#next {
+    display:none;
+    background:#00ff88;
+    border:0;
+    padding:15px 30px;
+}
+
+input {
+    background:black;
+    color:#00ff88;
+    border:1px solid #00ff88;
+    padding:12px;
+    font-family:monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>FINAL ESCAPE</h1>
+
+<p>
+You are locked inside the system room.
+Find the clues and escape.
+</p>
+
+<div class="room">
+
+<div class="object" id="clock" onclick="clock()">
+🕐 CLOCK
+</div>
+
+<div class="object" id="safe" onclick="safe()">
+🔐 SAFE
+</div>
+
+<div class="object" id="computer" onclick="computer()">
+💻 COMPUTER
+</div>
+
+<div class="object" id="painting" onclick="painting()">
+🖼 PAINTING
+</div>
+
+<div class="object" id="drawer" onclick="drawer()">
+🗄 DRAWER
+</div>
+
+</div>
+
+<p id="message"></p>
+
+<div id="lock" style="display:none;">
+
+<input id="answer" placeholder="FINAL CODE">
+
+<button onclick="unlock()">UNLOCK</button>
+
+</div>
+
+<div id="next">
+
+    <h2 style="color: red;">✓ ESCAPED</h2>
+
+    <h2 style="color: red;">YOU COMPLETED THE ENTIRE GAME.</h2>
+
+</div>
+
+<script>
+
+let clues = {
+
+    clock:false,
+    safe:false,
+    computer:false,
+    painting:false,
+    drawer:false
+
+};
+
+function clock() {
+
+    clues.clock = true;
+
+    document.getElementById("message").innerHTML =
+        "The clock is stopped at 07:42.";
+
+}
+
+function safe() {
+
+    clues.safe = true;
+
+    document.getElementById("message").innerHTML =
+        "The safe says: 'The first number is hidden in the time.'";
+
+}
+
+function computer() {
+
+    clues.computer = true;
+
+    document.getElementById("message").innerHTML =
+        "Computer message: 'Take the MINUTES from the clock.'";
+
+}
+
+function painting() {
+
+    clues.painting = true;
+
+    document.getElementById("message").innerHTML =
+        "Behind the painting: 'The drawer knows the second number.'";
+
+}
+
+function drawer() {
+
+    clues.drawer = true;
+
+    document.getElementById("message").innerHTML =
+        "Inside the drawer: 'Take the HOUR from the clock.'";
+
+}
+
+setInterval(function(){
+
+    if(
+        clues.clock &&
+        clues.safe &&
+        clues.computer &&
+        clues.painting &&
+        clues.drawer
+    ) {
+
+        document.getElementById("message").innerHTML =
+            "All clues collected. The final lock is ready.";
+
+        document.getElementById("lock").style.display =
+            "block";
+
+    }
+
+},500);
+
+function unlock() {
+
+    let answer =
+        document.getElementById("answer").value;
+
+    /*
+       Clock = 07:42
+
+       MINUTES = 42
+       HOUR = 07
+
+       Final code = 4207
+    */
+
+    if(answer === "4207") {
+
+        document.getElementById("lock").style.display =
+            "none";
+
+        document.getElementById("next").style.display =
+            "block";
+
+        document.getElementById("message").innerHTML =
+            "✓ LOCK OPENED";
+
+    } else {
+
+        document.getElementById("message").innerHTML =
+            "✗ WRONG CODE";
+
+    }
+
+}
+
+
+
+</body>
+</html>

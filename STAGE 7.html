@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Level 3 - Switches</title>
+
+    <style>
+        body {
+            background: #080808;
+            color: #00ff88;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .switches {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px;
+        }
+
+        .switch {
+            width: 70px;
+            height: 100px;
+            background: #222;
+            color: red;
+            border: 2px solid #555;
+            cursor: pointer;
+            font-family: monospace;
+        }
+
+        .on {
+            background: #00ff88;
+            color: black;
+        }
+
+        #next {
+            display: none;
+            padding: 15px 30px;
+            background: #00ff88;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>POWER CONTROL</h1>
+
+<p>Activate the correct switches.</p>
+
+<div class="switches">
+
+<button class="switch" onclick="toggle(this)">OFF</button>
+<button class="switch" onclick="toggle(this)">OFF</button>
+<button class="switch" onclick="toggle(this)">OFF</button>
+<button class="switch" onclick="toggle(this)">OFF</button>
+<button class="switch" onclick="toggle(this)">OFF</button>
+<button class="switch" onclick="toggle(this)">OFF</button>
+
+</div>
+
+<p id="message"></p>
+
+<button id="next" onclick="location.href='STAGE 8.html'">
+NEXT LEVEL →
+</button>
+
+<script>
+
+function toggle(button) {
+
+    if (button.innerHTML === "OFF") {
+        button.innerHTML = "ON";
+        button.classList.add("on");
+    } else {
+        button.innerHTML = "OFF";
+        button.classList.remove("on");
+    }
+
+    check();
+
+}
+
+function check() {
+
+    let switches = document.querySelectorAll(".switch");
+
+    let correct =
+        switches[0].innerHTML === "ON" &&
+        switches[1].innerHTML === "OFF" &&
+        switches[2].innerHTML === "ON" &&
+        switches[3].innerHTML === "OFF" &&
+		switches[4].innerHTML === "OFF" &&
+        switches[5].innerHTML === "ON";
+
+    if (correct) {
+
+        document.getElementById("message").innerHTML =
+            "✓ POWER SYSTEM ONLINE";
+
+        document.getElementById("next").style.display =
+            "inline-block";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

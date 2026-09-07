@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mind Puzzle - Level 1</title>
+
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>LEVEL 1</h1>
+
+    <h2>Find the password</h2>
+
+    <p>
+        I have keys but no locks.<br>
+        I have space but no room.<br>
+        What am I?
+    </p>
+
+    <input type="text" id="answer" placeholder="Enter answer">
+
+    <button onclick="checkAnswer()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+
+        function checkAnswer() {
+
+            let answer =
+                document.getElementById("answer").value.toLowerCase();
+
+            if (answer === "keyboard") {
+
+                window.location.href = "STAGE 2.html";
+
+            } else {
+
+                document.getElementById("message").innerHTML =
+                    "Wrong answer. Try again!";
+
+            }
+
+        }
+
+    </script>
+	
+	 <button onclick="window.location.href='index.html'">
+        Go Home
+    </button>
+
+</body>
+
+</html>

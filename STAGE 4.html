@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<p>Stage 4</p>
+
+<p>A B C D E F G H I J K L M P Q R S T U V W X Y Z</p>
+   
+<p>D E F A B C J K L G H I Q R S M P V T U X W Z Y</p>
+
+<p>PVDJB 101 </p>
+
+<p style="color: white;">Remember binary :)</p>
+
+
+<input type="password" id="password" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+
+    <p id="message"></p>
+	
+	
+
+
+
+
+<button id="nextButton" style="display: none;" onclick="nextLevel()">
+        Next Level
+    </button>
+	
+	
+ <script>
+        function checkPassword() {
+            let password = document.getElementById("password").value;
+
+            if (password === "STAGE 5") {
+                document.getElementById("message").innerHTML = "Correct!";
+                document.getElementById("nextButton").style.display = "block";
+            } else {
+                document.getElementById("message").innerHTML = "Wrong password!";
+            }
+        }
+
+        function nextLevel() {
+            window.location.href = "STAGE 5.html";
+        }
+    </script>
+
+ <button onclick="window.location.href='index.html'">
+        Go Home
+    </button>
+	
+	
+	
+
+</head>
+</html>

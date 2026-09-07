@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Level 4 - Memory</title>
+
+    <style>
+        body {
+            background: #050505;
+            color: #00ff88;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        #code {
+            font-size: 50px;
+            margin: 50px;
+        }
+
+        input {
+            background: black;
+            color: #00ff88;
+            border: 1px solid #00ff88;
+            padding: 15px;
+            font-family: monospace;
+        }
+
+        button {
+            padding: 15px 25px;
+            background: #00ff88;
+            border: none;
+            cursor: pointer;
+        }
+
+        #next {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>MEMORY TEST</h1>
+
+<p>Remember the code.</p>
+
+<div id="code">101010110</div>
+
+<div id="inputArea" style="display:none;">
+
+<input id="answer" placeholder="Enter code">
+
+<button onclick="check()">SUBMIT</button>
+
+</div>
+
+<p id="message"></p>
+
+<button id="next" onclick="location.href='STAGE 9.html'">
+NEXT LEVEL →
+</button>
+
+<script>
+
+setTimeout(function() {
+
+    document.getElementById("code").innerHTML =
+        "████";
+
+    document.getElementById("inputArea").style.display =
+        "block";
+
+}, 2500);
+
+
+function check() {
+
+    let answer = document.getElementById("answer").value;
+
+    if (answer === "101010110") {
+
+        document.getElementById("message").innerHTML =
+            "✓ MEMORY TEST PASSED";
+
+        document.getElementById("next").style.display =
+            "inline-block";
+
+    } else {
+
+        document.getElementById("message").innerHTML =
+            "✗ INCORRECT";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
